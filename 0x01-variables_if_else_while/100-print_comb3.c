@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include <stdlib.h>
 
 #include <time.h>
@@ -8,28 +6,26 @@
 * main - Print diff combinations of two digits
 * Return: Always 0 (Success)
 */
-
 int main(void)
+{
+	int n;
 
-{ 
-	int d, p;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-	for (d = '0'; d < '9'; d++)
+	printf("%d ", n);
+	if (n > 0)
 	{
-	
-	for (p = d + 1; p <= '9'; p++)
-	{
-	if (p != d)
-	{
-	putchar(d);
-	putchar(p);
-	if (d == '8' && p == '9')
-	continue;
-	putchar(',');
-	putchar(' ');
+		printf("is positive\n");
 	}
-	}	
+	else if (n == 0)
+	{
+		printf("is zero\n");
 	}
-	putchar('\n');
+	else
+	{
+		printf("is negative\n");
+	}
+
 	return (0);
 }
